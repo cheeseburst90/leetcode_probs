@@ -1,0 +1,20 @@
+Configuration:
+  name: Default
+
+  Appenders:
+    Console:
+      name: LogToConsole
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%d [%t] %-5p %c - %m%n"
+  Loggers:
+      Logger:
+        - name: log4j2-default
+          additivity: false
+          level: debug
+          AppenderRef:
+            - ref: LogToConsole
+      Root:
+        level: debug
+        AppenderRef:
+          - ref: LogToConsole
